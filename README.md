@@ -26,4 +26,5 @@
     $item->getQuantity();   // Количество
     $item->getFinalPrice(); // Сумма
     $item->getWeight();     // Вес
-    $item->getPropertyCollection(); // Свойства товара в корзине
+    $basketProps = $item->getPropertyCollection(); //Свойства товара в корзине
+    $arBasketProps = $basketProps->getPropertyValues(); //Массив свойств товара

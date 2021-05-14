@@ -26,6 +26,7 @@
     $item->getQuantity();   // Количество
     $item->getFinalPrice(); // Сумма
     $item->getWeight();     // Вес
+    $basketItems = $basket->getBasketItems(); // массив объектов Sale\BasketItem
     
 Свойства товаров в корзине:
     

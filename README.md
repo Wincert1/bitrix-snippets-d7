@@ -26,5 +26,30 @@
     $item->getQuantity();   // Количество
     $item->getFinalPrice(); // Сумма
     $item->getWeight();     // Вес
+    
+Свойства товаров в корзине:
+    
     $basketProps = $item->getPropertyCollection(); //Свойства товара в корзине
-    $arBasketProps = $basketProps->getPropertyValues(); //Массив свойств товара
+    $basketProps = $basketProps->getPropertyValues(); //Массив свойств товара
+    
+Добавить свойство:
+
+    $basketProps->setProperty(array(
+        array(
+            'NAME' => 'Стиль',
+            'CODE' => 'STYLE',
+            'VALUE' => 'Модерн',
+            'SORT' => 100,
+        ),
+    ));
+    $basketProps->save();
+    
+Удалить свойство:
+
+    foreach ($basketProps as $item) {
+        if ($item->getField('CODE') == 'STYLE') {
+            $propertyItem->delete();
+            break;
+        }
+    }
+    $basketProps->save();

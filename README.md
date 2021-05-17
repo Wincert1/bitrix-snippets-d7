@@ -6,8 +6,8 @@
 
     use Bitrix\Main\Page\Asset; 
 
-    Asset::getInstance()->addJs('/путь/скрипт.js'); 
-    Asset::getInstance()->addCss('/путь/стиль.css'); 
+    Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/.js'); 
+    Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/.css'); 
     Asset::getInstance()->addString('<meta itemprop="name" content="Название сайта"/>');
 
 <h3>Работа с корзиной</h3>

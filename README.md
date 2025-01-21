@@ -12,13 +12,13 @@
 
 <h3>GetList элементов ИБ</h3>
 
-use \Bitrix\Iblock\Elements\ElementPhotouploadsTable;
+    use \Bitrix\Iblock\Elements\ElementPhotouploadsTable;
 
-$rs = ElementPhotouploadsTable::getList([
+    $rs = ElementPhotouploadsTable::getList([
         'order' => ['ID' => 'DESC'],
         'select' => ['ID', 'NAME', 'FILES_LIST', 'OBJECT.VALUE'],
         'filter' => ['=ACTIVE' => 'Y', 'OBJECT.VALUE' => [3589, 44510]],
-//        'limit' => 1
+    //        'limit' => 1
     ]);
     while ($ar = $rs->fetch()) {
         p($ar);

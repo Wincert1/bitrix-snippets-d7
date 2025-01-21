@@ -10,6 +10,20 @@
     Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/.css'); 
     Asset::getInstance()->addString('<meta itemprop="name" content="Название сайта"/>');
 
+<h3>GetList элементов ИБ</h3>
+
+use \Bitrix\Iblock\Elements\ElementPhotouploadsTable;
+
+$rs = ElementPhotouploadsTable::getList([
+        'order' => ['ID' => 'DESC'],
+        'select' => ['ID', 'NAME', 'FILES_LIST', 'OBJECT.VALUE'],
+        'filter' => ['=ACTIVE' => 'Y', 'OBJECT.VALUE' => [3589, 44510]],
+//        'limit' => 1
+    ]);
+    while ($ar = $rs->fetch()) {
+        p($ar);
+    }
+
 <h3>Работа с корзиной</h3>
 
 Корзина это экземпляр класса Bitrix\Sale\Basket.
